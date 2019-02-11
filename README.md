@@ -63,8 +63,10 @@ SELECT * FROM CONVENIO.BENEFICIARIO;
 
 -- insert a record for testing purposes.
 INSERT INTO CONVENIO.BENEFICIARIO
-  (handle,nu_contrato,nu_cpf,dt_adesao,email,nome) VALUES (
-   CONVENIO.BENEFICIARIO_SEQ.nextVal,'100789','11111111111',sysdate,'raphael@test.com','raphael');
+  (handle,familia,nome,email,nu_cpf,nu_cartao,nu_contrato,dt_adesao) VALUES (
+   CONVENIO.BENEFICIARIO_SEQ.nextVal,777,'raphael','raphael@test.com','11111111111','10010','00001',sysdate);
+
+COMMIT;
 ```
 
 Open Postman and use the available collection at:

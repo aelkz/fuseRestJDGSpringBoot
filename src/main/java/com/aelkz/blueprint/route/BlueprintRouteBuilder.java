@@ -159,7 +159,7 @@ public class BlueprintRouteBuilder extends RouteBuilder {
                 .streamCaching()
                 .log("preparing to call infinispan with handle=${header.handle}")
                 .setHeader(InfinispanConstants.OPERATION).constant(InfinispanOperation.GET)
-                .setHeader(InfinispanConstants.KEY).simple("${header.handle}", Integer.class)
+                .setHeader(InfinispanConstants.KEY).simple("${header.handle}", Long.class)
                 .to("infinispan:default?cacheContainer=#remoteCacheContainer")
                 .choice()
                 .when().simple("${header.CamelInfinispanOperationResult} != null")
