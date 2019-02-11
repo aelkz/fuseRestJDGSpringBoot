@@ -1,0 +1,20 @@
+spec:
+  template:
+    spec:
+      containers:
+        -
+          resources:
+            requests:
+              cpu: "0.2"
+              memory: 256Mi
+            limits:
+              cpu: "1.0"
+              memory: 256Mi
+          env:
+            # https://www.baeldung.com/spring-boot-json-properties
+            # https://github.com/indrekots/spring-boot-envvariables
+            # https://stackoverflow.com/questions/41446778/spring-application-json-environment-variable-not-recognized-by-spring-boot
+            - name: AMQP_HOST
+              value: tcp://localhost:61616
+            - name: SPRING_APPLICATION_JSON
+              value: '{"server":{"undertow":{"io-threads":1, "worker-threads":2 }}}'
