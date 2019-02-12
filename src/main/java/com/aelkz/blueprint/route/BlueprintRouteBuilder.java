@@ -186,10 +186,12 @@ public class BlueprintRouteBuilder extends RouteBuilder {
                 .wireTap("direct:cache-put")
                 .process(restEndpointMapResponseProcessor)
             .endChoice()
+            .otherwise()
+                .process(restEndpointMapResponseProcessor)
             .end();
 
         from("direct:cache-check-response")
-            .choice().when().simple("${body} != null")
+            .choice().when(simple("${body} != null"))
                 .to("direct:cache-entry-found")
             .otherwise()
                 .to("direct:database")

@@ -29,9 +29,8 @@ public class RestBaseProcessor {
      * @param batch
      */
     public void processMapResponse(BeneficiarioResponseDTO response, Map<Long,Beneficiario> batch) {
-        if (batch.size() > 0) {
+        if (batch != null && batch.size() > 0) {
             // iterate over Map and create a new List
-
             List<Beneficiario> result = new ArrayList();
 
             for (Map.Entry<Long, Beneficiario> entry : batch.entrySet()) {
