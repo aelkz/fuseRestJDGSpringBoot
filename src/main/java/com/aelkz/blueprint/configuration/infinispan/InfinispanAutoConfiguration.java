@@ -39,15 +39,15 @@ public class InfinispanAutoConfiguration {
         String port = environment.getProperty(serviceBaseName + "_SERVICE_PORT") == null ?
                 "11222" : environment.getProperty(serviceBaseName + "_SERVICE_PORT");
 
-        String maxEntriesStr = environment.getProperty(serviceBaseName + "_MAX_ENTRIES") == null ?
-                "1000" : environment.getProperty(serviceBaseName + "_MAX_ENTRIES");
+        String maxRetriesStr = environment.getProperty(serviceBaseName + "_SERVICE_RETRIES") == null ?
+                "10" : environment.getProperty(serviceBaseName + "_SERVICE_RETRIES");
 
-        Integer maxEntries = 0;
+        Integer maxRetries = 0;
 
         try {
-            maxEntries = Integer.valueOf(maxEntriesStr);
+            maxRetries = Integer.valueOf(maxRetriesStr);
         }catch (NumberFormatException ex) {
-            logger.error("Error trying to get infinispan maxEntries value.");
+            logger.error("Error trying to get infinispan maxRetries value.");
         }
 
         Objects.requireNonNull(host, "Infinispan service host not found in the environment");
@@ -59,7 +59,7 @@ public class InfinispanAutoConfiguration {
         ConfigurationBuilder builder = new ConfigurationBuilder()
                 .forceReturnValues(true)
                 .addServers(hostPort)
-                .maxRetries(maxEntries)
+                .maxRetries(maxRetries)
                 .security()
                 .connectionTimeout(3000)
                 ;

@@ -107,6 +107,11 @@
             <artifactId>camel-infinispan-starter</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-hystrix</artifactId>
+            <version>2.18.5</version>
+        </dependency>
+        <dependency>
             <!-- https://github.com/cronn-de/reflection-util -->
             <groupId>de.cronn</groupId>
             <artifactId>reflection-util</artifactId>

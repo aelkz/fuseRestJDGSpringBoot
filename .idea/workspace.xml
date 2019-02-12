@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c81d5c2-bdd0-4324-a053-d700bda3e726" name="Default Changelist" comment=".0.0">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/configuration/infinispan/client/HotRodClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/processor/infinispan/ExtractHandleProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/processor/infinispan/ExtractCacheKeyProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/processor/infinispan/ExtractCacheKeyProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/processor/infinispan/KeyValueParserProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/processor/infinispan/ExtractBeneficiarioProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/processor/infinispan/RestEndpointMapResponseProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/processor/infinispan/RestEndpointMapResponseProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/processor/rest/RestBaseProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/processor/rest/RestBaseProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/processor/infinispan/CacheFallbackProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/configuration/infinispan/InfinispanAutoConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/configuration/infinispan/InfinispanAutoConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/route/BlueprintRouteBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/route/BlueprintRouteBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/aelkz/blueprint/configuration/infinispan/client/HotRodClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/aelkz/blueprint/route/BlueprintRouteBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/aelkz/blueprint/route/BlueprintRouteBuilder.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,32 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/Application.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/route/BlueprintRouteBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-99">
-              <caret line="168" column="52" selection-start-line="168" selection-start-column="52" selection-end-line="168" selection-end-column="52" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/configuration/infinispan/client/HotRodClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="41" selection-start-line="41" selection-end-line="41" />
+            <state relative-caret-position="204">
+              <caret line="159" column="35" lean-forward="true" selection-start-line="159" selection-start-column="35" selection-end-line="159" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -55,28 +33,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/processor/infinispan/RestEndpointMapResponseProcessor.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/processor/infinispan/ExtractCacheKeyProcessor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/processor/infinispan/ExtractBeneficiarioProcessor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="301">
+              <caret line="116" column="35" selection-start-line="116" selection-start-column="20" selection-end-line="116" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -95,6 +55,10 @@
       <find>cassi</find>
       <find>redhat</find>
       <find>+++</find>
+      <find>hys]</find>
+      <find>il to connect infinis</find>
+      <find>o connect infini</find>
+      <find>Fail</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -114,17 +78,19 @@
         <option value="$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/processor/exception/RestBusinessExceptionProcessor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/exception/BusinessException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/exception/BusinessExceptionEnum.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/configuration/infinispan/client/JDGContaCorrentCacheConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/processor/rest/RestBaseProcessor.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/processor/infinispan/ExtractHandleProcessor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/processor/infinispan/ExtractBeneficiarioProcessor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/processor/infinispan/RestEndpointMapResponseProcessor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/processor/infinispan/ExtractCacheKeyProcessor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/route/BlueprintRouteBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/configuration/infinispan/client/HotRodClient.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/processor/infinispan/CacheFallbackProcessor.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/configuration/infinispan/InfinispanAutoConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/route/BlueprintRouteBuilder.java" />
       </list>
     </option>
   </component>
@@ -188,16 +154,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="blueprint" type="462c0819:PsiDirectoryNode" />
               <item name="infinispan" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FuseJDGRestSpringBoot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FuseJDGRestSpringBoot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="blueprint" type="462c0819:PsiDirectoryNode" />
-              <item name="infinispan" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FuseJDGRestSpringBoot" type="b2602c69:ProjectViewProjectNode" />
@@ -301,8 +257,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HotRodClient" />
         <item itemvalue="Spring Boot.Application (1)" />
+        <item itemvalue="Application.HotRodClient" />
       </list>
     </recent_temporary>
   </component>
@@ -316,7 +272,7 @@
       <workItem from="1549919120543" duration="2668000" />
       <workItem from="1549922553453" duration="39000" />
       <workItem from="1549922852770" duration="635000" />
-      <workItem from="1549928534108" duration="11963000" />
+      <workItem from="1549928534108" duration="16686000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Release">
       <created>1549923480053</created>
@@ -329,7 +285,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15305000" />
+    <option name="totallyTimeSpent" value="20028000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="983" extended-state="0" />
@@ -338,7 +294,7 @@
       <window_info id="Designer" order="0" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Web" order="2" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.25885227" />
+      <window_info content_ui="combo" id="Project" order="3" weight="0.25885227" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
@@ -350,8 +306,8 @@
       <window_info anchor="bottom" id="Message" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Find" order="9" weight="0.32996634" />
-      <window_info anchor="bottom" id="Run" order="10" weight="0.4365881" />
-      <window_info anchor="bottom" id="Debug" order="11" visible="true" weight="0.3647587" />
+      <window_info anchor="bottom" id="Run" order="10" weight="0.49719417" />
+      <window_info anchor="bottom" id="Debug" order="11" weight="0.63973063" />
       <window_info anchor="bottom" id="Cvs" order="12" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="13" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="14" />
@@ -363,6 +319,35 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="5" weight="0.25" />
       <window_info anchor="right" id="Maven" order="6" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Designer" order="0" />
+      <window_info id="Favorites" order="1" side_tool="true" />
+      <window_info id="Web" order="2" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.25885227" />
+      <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="1" />
+      <window_info anchor="bottom" id="Spring" order="2" />
+      <window_info anchor="bottom" id="Messages" order="3" weight="0.32996634" />
+      <window_info anchor="bottom" id="Version Control" order="4" />
+      <window_info anchor="bottom" id="Terminal" order="5" />
+      <window_info anchor="bottom" id="Java Enterprise" order="6" />
+      <window_info anchor="bottom" id="Message" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Find" order="9" weight="0.32996634" />
+      <window_info anchor="bottom" id="Run" order="10" weight="0.49719417" />
+      <window_info active="true" anchor="bottom" id="Debug" order="11" visible="true" weight="0.63973063" />
+      <window_info anchor="bottom" id="Cvs" order="12" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="13" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="14" />
+      <window_info anchor="right" id="Database" order="0" />
+      <window_info anchor="right" id="Bean Validation" order="1" />
+      <window_info anchor="right" id="Palette&#9;" order="2" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="3" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="4" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="5" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="6" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -405,13 +390,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="78" column="38" selection-start-line="78" selection-start-column="38" selection-end-line="78" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -468,13 +446,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/configuration/infinispan/InfinispanAutoConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-430">
-          <caret line="31" column="51" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/processor/infinispan/RestEndpointDatabaseProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="254">
@@ -489,13 +460,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="140" column="31" lean-forward="true" selection-start-line="140" selection-start-column="31" selection-end-line="140" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/processor/infinispan/ExtractHandleProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -503,13 +467,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/processor/infinispan/ExtractBeneficiarioProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
@@ -534,20 +491,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/route/BlueprintRouteBuilder.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/configuration/infinispan/client/HotRodClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-99">
-          <caret line="168" column="52" selection-start-line="168" selection-start-column="52" selection-end-line="168" selection-end-column="52" />
+        <state relative-caret-position="360">
+          <caret line="38" column="31" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/configuration/infinispan/client/HotRodClient.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        <state relative-caret-position="665">
+          <caret line="112" selection-start-line="112" selection-end-line="112" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/processor/infinispan/CacheFallbackProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="116" column="35" selection-start-line="116" selection-start-column="20" selection-end-line="116" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/configuration/infinispan/InfinispanAutoConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/processor/infinispan/ExtractBeneficiarioProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/aelkz/blueprint/route/BlueprintRouteBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="159" column="35" lean-forward="true" selection-start-line="159" selection-start-column="35" selection-end-line="159" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

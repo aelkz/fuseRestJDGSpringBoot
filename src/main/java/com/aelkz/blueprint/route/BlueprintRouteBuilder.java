@@ -33,6 +33,7 @@ import org.apache.camel.component.infinispan.InfinispanConstants;
 import org.apache.camel.component.infinispan.InfinispanOperation;
 import org.apache.camel.model.dataformat.JsonLibrary;
 import org.apache.camel.model.rest.RestBindingMode;
+import org.infinispan.client.hotrod.exceptions.TransportException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
@@ -83,6 +84,9 @@ public class BlueprintRouteBuilder extends RouteBuilder {
     @Autowired
     private ClearHeaderProcessor clearHeaderProcessor;
 
+    @Autowired
+    private CacheFallbackProcessor cacheFallbackProcessor;
+
     @Override
     public void configure() throws Exception {
 
@@ -90,12 +94,12 @@ public class BlueprintRouteBuilder extends RouteBuilder {
                 .handled(true)
                 .process(new RestBusinessExceptionProcessor())
                 .marshal().json(JsonLibrary.Jackson)
-                .log(LoggingLevel.ERROR, "Erro ao validar regras negociais.");
+                .log(LoggingLevel.ERROR, "Fail to validate business rules.");
 
         onException(ConnectException.class)
                 .handled(true)
                 .marshal().json(JsonLibrary.Jackson)
-                .log(LoggingLevel.ERROR, "Erro ao conectar no JBoss Data Grid.");
+                .log(LoggingLevel.ERROR, "Fail to connect infinispan.");
 
         // /--------------------------------------------------\
         // | Expose route w/ REST endpoint                    |
@@ -153,51 +157,70 @@ public class BlueprintRouteBuilder extends RouteBuilder {
          */
 
         from("direct:api")
-                .id("direct-api-route")
-                .description("direct-api-route")
-                .streamCaching()
-                .setBody(simple("hello"))
-                .to("direct:database");
+            .id("direct-api-route")
+            .description("direct-api-route")
+            .streamCaching()
+            .setBody(simple("hello"))
+            .to("direct:fetch-data");
+
+        from("direct:fetch-data")
+            .streamCaching()
+            .log("preparing to call infinispan with handle=${header.handle}")
+            .process(extractHandleProcessor)
+            .setHeader(InfinispanConstants.OPERATION, constant(InfinispanOperation.GET))
+            .setHeader(InfinispanConstants.KEY, constant("${header.objKey}"))
+            .hystrix()
+                .to("infinispan:default?cacheContainer=#remoteCacheContainer")
+                .to("direct:cache-check-response")
+            .onFallback()
+                .to("direct:database")
+            .end();
 
         from("direct:database")
-                .streamCaching()
-                .log("preparing to call infinispan with handle=${header.handle}")
-                .process(extractHandleProcessor)
-                .setHeader(InfinispanConstants.OPERATION, constant(InfinispanOperation.GET))
-                .setHeader(InfinispanConstants.KEY, constant("${header.objKey}"))
-                .to("infinispan:default?cacheContainer=#remoteCacheContainer")
-                .to("log:org.apache.camel.component.infinispan?level=INFO&showAll=true&multiline=true")
-                .choice()
-                .when().simple("${body} != null")
-                    .log("infinispan entry found!")
-                    .process(extractBeneficiarioProcessor)
-                    .process(restEndpointMapResponseProcessor)
-                .endChoice()
-                .otherwise()
-                    .log("infinispan entry not found.")
-                    .process(restEndpointDatabaseProcessor)
-                    .choice()
-                    .when(simple("${header.recordFound} == true"))
-                        .log(LoggingLevel.INFO, "${header.size} record(s) found.")
-                        .process(keyValueBuilderProcessor)
-                        .wireTap("direct:cache-put")
-                        .process(restEndpointMapResponseProcessor)
-                    .endChoice()
-                .end();
+            .log("infinispan entry not found.")
+            .process(restEndpointDatabaseProcessor)
+            .choice()
+            .when(simple("${header.recordFound} == true"))
+                .log(LoggingLevel.INFO, "${header.size} record(s) found.")
+                .process(keyValueBuilderProcessor)
+                .wireTap("direct:cache-put")
+                .process(restEndpointMapResponseProcessor)
+            .endChoice()
+            .end();
+
+        from("direct:cache-check-response")
+            .choice().when().simple("${body} != null")
+                .to("direct:cache-entry-found")
+            .otherwise()
+                .to("direct:database")
+            .endChoice()
+            .end();
+
+        from("direct:cache-entry-found")
+            .log("infinispan entry found!")
+            .to("log:org.apache.camel.component.infinispan?level=INFO&showAll=true&multiline=true")
+            .process(extractBeneficiarioProcessor)
+            .process(restEndpointMapResponseProcessor)
+            .end();
 
         from("direct:cache-put")
-                .id("direct-cache-put-route")
-                .description("direct-cache-put-route")
-                .streamCaching()
-                .split().body().streaming()
-                .log("key/value object: ${body}")
-                .process(extractCacheKeyProcessor)
-                .setHeader(InfinispanConstants.KEY, constant("${header.objKey}"))
-                .setHeader(InfinispanConstants.VALUE, simple("${body}", Beneficiario.class))
-                .setHeader(InfinispanConstants.OPERATION, constant(InfinispanOperation.PUT))
-                .log(LoggingLevel.INFO, "infinispan PUT operation called.")
+            .id("direct-cache-put-route")
+            .description("direct-cache-put-route")
+            .streamCaching()
+            .split().body().streaming()
+            .log("key/value object: ${body}")
+            .process(extractCacheKeyProcessor)
+            .setHeader(InfinispanConstants.KEY, constant("${header.objKey}"))
+            .setHeader(InfinispanConstants.VALUE, simple("${body}", Beneficiario.class))
+            .setHeader(InfinispanConstants.OPERATION, constant(InfinispanOperation.PUT))
+            .log(LoggingLevel.INFO, "infinispan PUT operation called.")
+            .hystrix()
                 .to("infinispan:default?cacheContainer=#remoteCacheContainer")
-                .to("log:org.apache.camel.component.infinispan?level=INFO&showAll=true&multiline=true");
+                .to("log:org.apache.camel.component.infinispan?level=INFO&showAll=true&multiline=true")
+            .onFallback()
+                .process(cacheFallbackProcessor)
+                .log(LoggingLevel.ERROR, "infinispan cache put operation failed.")
+            .end();
     }
 
 }
