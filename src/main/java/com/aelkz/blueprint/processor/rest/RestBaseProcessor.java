@@ -133,6 +133,19 @@ public class RestBaseProcessor {
         return dtos;
     }
 
+    public BeneficiarioDTO convertEntityToDTO(Beneficiario entry) {
+        BeneficiarioDTO dto = new BeneficiarioDTO();
+        dto.setHandle(entry.getHandle());
+        dto.setFamilia(entry.getFamilia());
+        dto.setNome(entry.getNome());
+        dto.setEmail(entry.getEmail());
+        dto.setCpf(entry.getCpf());
+        dto.setCartao(entry.getCartao());
+        dto.setContrato(entry.getContrato());
+        dto.setDataAdesao(entry.getDataAdesao());
+        return dto;
+    }
+
     public String convertListToJson(List<Beneficiario> jpaResult) {
         if (jpaResult.size() > 0) {
             Gson gson = new GsonBuilder().disableHtmlEscaping().create();

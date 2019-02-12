@@ -1,0 +1,24 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.aelkz.blueprint.configuration.infinispan.InfinispanAutoConfiguration",
+      "name": "infinispan",
+      "type": "com.aelkz.blueprint.configuration.infinispan.InfinispanAutoConfiguration"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.aelkz.blueprint.configuration.infinispan.InfinispanAutoConfiguration",
+      "defaultValue": "default",
+      "name": "infinispan.cache-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.aelkz.blueprint.configuration.infinispan.InfinispanAutoConfiguration",
+      "defaultValue": "datagrid-app-hotrod",
+      "name": "infinispan.service",
+      "type": "java.lang.String"
+    }
+  ]
+}

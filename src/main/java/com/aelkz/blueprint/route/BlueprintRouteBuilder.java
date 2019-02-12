@@ -17,6 +17,7 @@
 
 package com.aelkz.blueprint.route;
 
+import com.aelkz.blueprint.model.Beneficiario;
 import com.aelkz.blueprint.processor.exception.RestBusinessExceptionProcessor;
 import com.aelkz.blueprint.processor.infinispan.*;
 import com.aelkz.blueprint.processor.rest.RestEndpointProcessor;
@@ -65,13 +66,16 @@ public class BlueprintRouteBuilder extends RouteBuilder {
     private KeyValueBuilderProcessor keyValueBuilderProcessor;
 
     @Autowired
-    private KeyValueParserProcessor keyValueParserProcessor;
+    private ExtractBeneficiarioProcessor extractBeneficiarioProcessor;
 
     @Autowired
     private RestEndpointMapResponseProcessor restEndpointMapResponseProcessor;
 
     @Autowired
     private ExtractCacheKeyProcessor extractCacheKeyProcessor;
+
+    @Autowired
+    private ExtractHandleProcessor extractHandleProcessor;
 
     @Autowired
     private HeaderDebugProcessor headerDebugProcessor;
@@ -158,13 +162,15 @@ public class BlueprintRouteBuilder extends RouteBuilder {
         from("direct:database")
                 .streamCaching()
                 .log("preparing to call infinispan with handle=${header.handle}")
-                .setHeader(InfinispanConstants.OPERATION).constant(InfinispanOperation.GET)
-                .setHeader(InfinispanConstants.KEY).simple("${header.handle}", Long.class)
+                .process(extractHandleProcessor)
+                .setHeader(InfinispanConstants.OPERATION, constant(InfinispanOperation.GET))
+                .setHeader(InfinispanConstants.KEY, constant("${header.objKey}"))
                 .to("infinispan:default?cacheContainer=#remoteCacheContainer")
+                .to("log:org.apache.camel.component.infinispan?level=INFO&showAll=true&multiline=true")
                 .choice()
-                .when().simple("${header.CamelInfinispanOperationResult} != null")
+                .when().simple("${body} != null")
                     .log("infinispan entry found!")
-                    .process(keyValueParserProcessor)// TODO - must finish process exchange
+                    .process(extractBeneficiarioProcessor)
                     .process(restEndpointMapResponseProcessor)
                 .endChoice()
                 .otherwise()
@@ -179,12 +185,6 @@ public class BlueprintRouteBuilder extends RouteBuilder {
                     .endChoice()
                 .end();
 
-        /*
-         Rota:
-         Realiza a inserção no cache utilizando o PUT.
-         Logo após o PUT eu tento obter a entry recém adicionada utilizando o GET, porém não retorna nada.
-         */
-
         from("direct:cache-put")
                 .id("direct-cache-put-route")
                 .description("direct-cache-put-route")
@@ -192,13 +192,12 @@ public class BlueprintRouteBuilder extends RouteBuilder {
                 .split().body().streaming()
                 .log("key/value object: ${body}")
                 .process(extractCacheKeyProcessor)
-                .setHeader(InfinispanConstants.KEY).simple("${header.objKey}", Long.class)
-                .setHeader(InfinispanConstants.VALUE).simple("${body}")
-                .setHeader(InfinispanConstants.OPERATION).constant(InfinispanOperation.PUT)
-                //.setHeader(InfinispanConstants.LIFESPAN_TIME).constant(3600L)
-                //.setHeader(InfinispanConstants.LIFESPAN_TIME_UNIT).constant(TimeUnit.SECONDS.toString())
+                .setHeader(InfinispanConstants.KEY, constant("${header.objKey}"))
+                .setHeader(InfinispanConstants.VALUE, simple("${body}", Beneficiario.class))
+                .setHeader(InfinispanConstants.OPERATION, constant(InfinispanOperation.PUT))
                 .log(LoggingLevel.INFO, "infinispan PUT operation called.")
-                .to("infinispan:default?cacheContainer=#remoteCacheContainer");
+                .to("infinispan:default?cacheContainer=#remoteCacheContainer")
+                .to("log:org.apache.camel.component.infinispan?level=INFO&showAll=true&multiline=true");
     }
 
 }

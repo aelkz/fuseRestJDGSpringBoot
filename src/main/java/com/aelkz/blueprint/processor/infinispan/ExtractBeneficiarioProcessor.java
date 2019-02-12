@@ -12,21 +12,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Component
-public class KeyValueParserProcessor implements Processor {
+public class ExtractBeneficiarioProcessor implements Processor {
 
-    private static final transient Logger logger = LoggerFactory.getLogger(KeyValueParserProcessor.class);
+    private static final transient Logger logger = LoggerFactory.getLogger(ExtractBeneficiarioProcessor.class);
 
     @Override
     public void process(Exchange ex) throws Exception {
         Message inMessage = ex.getIn();
 
-        Map headers = inMessage.getHeaders();
+        Beneficiario entryValue = ex.getIn().getBody(Beneficiario.class);
 
-        Map<Long, Beneficiario> batch = new HashMap<>();
+        Map<Long,Beneficiario> batch = new HashMap<>();
 
-        // TODO - implementar a recuperação do valor do infinispan recém retornado.
-
-        // batch.put((Long) headers.get(InfinispanConstants.KEY), (Beneficiario) headers.get(InfinispanConstants.VALUE));
+        batch.put(entryValue.getHandle(), entryValue);
 
         ex.getOut().setBody(batch);
     }

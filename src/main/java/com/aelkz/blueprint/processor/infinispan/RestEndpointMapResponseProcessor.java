@@ -27,10 +27,6 @@ public class RestEndpointMapResponseProcessor extends RestBaseProcessor implemen
 
         Map<Long, Beneficiario> batch = exchange.getIn().getBody(Map.class);
 
-        //System.out.println("++++++++++++++++++");
-        //System.out.println(ObjectHelper.className(exchange.getIn().getBody()));
-        //System.out.println("++++++++++++++++++");
-
         processMapResponse(response, batch);
 
         // must return a proper json response
