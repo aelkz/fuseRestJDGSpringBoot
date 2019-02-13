@@ -18,7 +18,7 @@
 package com.aelkz.blueprint.processor.rest;
 
 import com.aelkz.blueprint.model.Beneficiario;
-import com.aelkz.blueprint.route.RestResourcesEnum;
+import com.aelkz.blueprint.route.RestEnum;
 import com.aelkz.blueprint.service.dto.BeneficiarioDTO;
 import com.aelkz.blueprint.service.dto.rest.BeneficiarioResponseDTO;
 import org.apache.camel.Exchange;
@@ -53,7 +53,7 @@ public class RestEndpointProcessor extends RestBaseProcessor implements Processo
 
         logger.info(httpMethod + " " +restResource);
 
-        if (restResource.equals(RestResourcesEnum.GET_BENEFICIARIOS.getResourcePath())) {
+        if (restResource.equals(RestEnum.GET_BENEFICIARIOS.getResourcePath())) {
 
             if (httpMethod.equals(HttpMethod.GET)) {
                 // /--------------------------------------------\
@@ -89,7 +89,7 @@ public class RestEndpointProcessor extends RestBaseProcessor implements Processo
                 processListResponse(response, result);
             }
 
-        }else if (restResource.equals(RestResourcesEnum.GET_BENEFICIARIO.getResourcePath())) {
+        }else if (restResource.equals(RestEnum.GET_BENEFICIARIO.getResourcePath())) {
             String handleParameter = (String) headers.get("handle");
             Long handle = 0L;
 

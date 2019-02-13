@@ -20,7 +20,7 @@ package com.aelkz.blueprint.processor.infinispan;
 import com.aelkz.blueprint.processor.rest.RestBaseProcessor;
 import com.aelkz.blueprint.exception.BusinessExceptionEnum;
 import com.aelkz.blueprint.model.Beneficiario;
-import com.aelkz.blueprint.route.RestResourcesEnum;
+import com.aelkz.blueprint.route.RestEnum;
 import com.aelkz.blueprint.service.BeneficiarioService;
 import com.aelkz.blueprint.service.dto.rest.BeneficiarioResponseDTO;
 import org.apache.camel.Exchange;
@@ -56,7 +56,7 @@ public class RestEndpointDatabaseProcessor extends RestBaseProcessor implements 
 
         logger.info(httpMethod + " " +restResource);
 
-        if (restResource.equals(RestResourcesEnum.GET_BENEFICIARIO_CACHE.getResourcePath())) {
+        if (restResource.equals(RestEnum.GET_BENEFICIARIO_CACHE.getResourcePath())) {
             String handleParameter = (String) headers.get("handle");
             Long handle = 0L;
 

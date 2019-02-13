@@ -44,6 +44,10 @@ public class InfinispanAutoConfiguration {
     // The name of the Infinispan cache.
     private String cacheName = "default";
 
+    public static final String CAMEL_URI = "infinispan:default?cacheContainer=#remoteCacheContainer";
+
+    public static final String CAMEL_LOG_URI = "log:org.apache.camel.component.infinispan?level=INFO&showAll=true&multiline=true";
+
     // Defines a bean named 'remoteCacheContainer' that points to the remote Infinispan cluster.
     @Bean(initMethod = "start", destroyMethod = "stop")
     public BasicCacheContainer remoteCacheContainer(Environment environment) {

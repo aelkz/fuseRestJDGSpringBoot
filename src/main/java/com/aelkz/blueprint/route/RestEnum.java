@@ -19,7 +19,7 @@ package com.aelkz.blueprint.route;
 
 import org.springframework.web.bind.annotation.RequestMethod;
 
-public enum RestResourcesEnum {
+public enum RestEnum {
 
     // REST resources
     GET_BENEFICIARIOS(RequestMethod.GET, "/beneficiarios", "beneficiarios-api", "Listar beneficiários"),
@@ -32,7 +32,7 @@ public enum RestResourcesEnum {
     private String routeId;
     private String description;
 
-    RestResourcesEnum(RequestMethod httpMethod, String resourcePath, String routeId, String description) {
+    RestEnum(RequestMethod httpMethod, String resourcePath, String routeId, String description) {
         this.httpMethod = httpMethod;
         this.resourcePath = resourcePath;
         this.routeId = routeId;
@@ -73,7 +73,7 @@ public enum RestResourcesEnum {
 
     public static RequestMethod getHttpMethodByResource(String resourcePath) {
         String path = null;
-        for (RestResourcesEnum e: RestResourcesEnum.values()) {
+        for (RestEnum e: RestEnum.values()) {
 
             // will not ignore case. Case is sensitive to assert resource path is right.
             if (e.getResourcePath().equals(resourcePath)) {
