@@ -108,9 +108,9 @@ A specific template was build for this blueprint at `./configuration/s2i-cassi-f
 
 | Name              | Default Value       | Description          |
 |-------------------|---------------------|----------------------|
-| `OPENSHIFT_ORACLE_DATASOURCE_HOST` | `` | Oracle Datasource host. e.g: jdbc:oracle:thin:@<HOST>:<PORT>:<SID> |
-| `OPENSHIFT_ORACLE_DATASOURCE_PORT` | `` | Oracle Datasource port. e.g: jdbc:oracle:thin:@<HOST>:<PORT>:<SID> |
-| `OPENSHIFT_ORACLE_DATASOURCE_SID` | `` | Oracle Datasource sid. e.g: jdbc:oracle:thin:@<HOST>:<PORT>:<SID> |
+| `OPENSHIFT_ORACLE_DATASOURCE_HOST` | `` | Oracle Datasource host. e.g: jdbc:oracle:thin:@HOST:PORT:SID |
+| `OPENSHIFT_ORACLE_DATASOURCE_PORT` | `` | Oracle Datasource port. e.g: jdbc:oracle:thin:@HOST:PORT:SID |
+| `OPENSHIFT_ORACLE_DATASOURCE_SID` | `` | Oracle Datasource sid. e.g: jdbc:oracle:thin:@HOST:PORT:SID |
 | `OPENSHIFT_ORACLE_DATASOURCE_USERNAME` | `` | Oracle Datasource username |
 | `OPENSHIFT_ORACLE_DATASOURCE_PASSWORD` | `` | Oracle Datasource password |
 | `OPENSHIFT_ORACLE_DATASOURCE_DRIVER` | `oracle.jdbc.driver.OracleDriver` | Oracle Datasource driver |
