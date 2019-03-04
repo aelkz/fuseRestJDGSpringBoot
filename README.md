@@ -316,6 +316,8 @@ Now you're able to connect in your local enviroment, like the following image:
 
 ![oracle-docker](documentation/images/02.png "Database connection properties")
 
+![oracle-docker-success](documentation/images/03.png "Database connection test")
+
 References:
 
 https://docs.openshift.com/container-platform/3.11/dev_guide/port_forwarding.html
