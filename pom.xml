@@ -165,6 +165,7 @@
             -->
             <groupId>com.oracle</groupId>
             <artifactId>ojdbc7</artifactId>
+            <version>12.1.0.2</version>
             <scope>system</scope>
             <!-- Desta forma a biblioteca é empacotada no FAT Jar da aplicação final que será adicionada na imagem do container -->
             <systemPath>${basedir}/lib/ojdbc7-12.1.0.2.jar</systemPath>
