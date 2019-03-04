@@ -32,22 +32,6 @@ public class Application {
 
     private static Logger logger = LoggerFactory.getLogger(Application.class);
 
-    @Value("${spring.datasource.url}")
-    private String jdbcUrl;
-
-    @Value("${spring.datasource.url}")
-    private String oracleDatasourceUrl;
-
-    @Value("${OPENSHIFT_ORACLE_DATASOURCE_HOST}")
-    private String v1;
-
-    @PostConstruct
-    public void init() {
-        System.out.println(jdbcUrl);
-        System.out.println(oracleDatasourceUrl);
-        System.out.println(v1);
-    }
-
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
