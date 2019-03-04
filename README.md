@@ -142,6 +142,11 @@ password: oracle
 
 PS. For this blueprint, we also provide more detail for creating another user schema.
 
+You can download and build the oracle-xe docker image from here:
+
+https://github.com/wnameless/docker-oracle-xe-11g or
+https://github.com/andyrbell/oracle-xe-11g-centos
+
 3- Start Red Hat JBoss Data Grid w/ port-offset equals to 100 (to not conflict w/ spring-boot)
 
 ```
@@ -167,7 +172,7 @@ SELECT * FROM CONVENIO.BENEFICIARIO;
 -- insert a record for testing purposes.
 INSERT INTO CONVENIO.BENEFICIARIO
   (handle,familia,nome,email,nu_cpf,nu_cartao,nu_contrato,dt_adesao) VALUES (
-   CONVENIO.BENEFICIARIO_SEQ.nextVal,777,'raphael','raphael@test.com','11111111111','10010','00001',sysdate);
+   CONVENIO.BENEFICIARIO_SEQ.nextVal,777,'raphael','rabreu@redhat.com','11111111111','10010','00001',sysdate);
 
 COMMIT;
 ```
@@ -207,7 +212,7 @@ That will return a JSON response like:
             "handle": 1,
             "familia": 777,
             "nome": "raphael",
-            "email": "raphael@test.com",
+            "email": "rabreu@redhat.com",
             "cpf": "22222222222",
             "cartao": "100230",
             "contrato": "10000000001",
@@ -235,26 +240,13 @@ Apache License Version 2.0
 rabreu@redhat.com
 
 ### APPENDIX A
-#### ORACLE USER (LOCAL ENVIRONMENT W/ DOCKER)
+#### ORACLE USER (LOCAL ENVIRONMENT W/ DOCKER OR OPENSHIFT PORT-FORWARD)
 
-```
-CREATE USER convenio IDENTIFIED BY convenio;
+Execute the attached SQL script: `./documentation/oracle-xe-blueprint.sql`
 
-GRANT CREATE SESSION TO convenio WITH ADMIN OPTION;
-
-GRANT UNLIMITED TABLESPACE TO convenio;
-
-GRANT CONNECT,RESOURCE,DBA TO convenio;
-
-ALTER PROFILE DEFAULT LIMIT PASSWORD_LIFE_TIME UNLIMITED; -- SET IT TO UNLIMITED
-
-ALTER PROFILE DEFAULT LIMIT COMPOSITE_LIMIT UNLIMITED PASSWORD_LIFE_TIME UNLIMITED PASSWORD_REUSE_TIME UNLIMITED PASSWORD_REUSE_MAX UNLIMITED PASSWORD_VERIFY_FUNCTION NULL PASSWORD_LOCK_TIME UNLIMITED PASSWORD_GRACE_TIME UNLIMITED FAILED_LOGIN_ATTEMPTS UNLIMITED;
-
-ALTER USER convenio ACCOUNT UNLOCK;
-```
 Now, you're able to use the following:
 
-port: 49161<br>
+port: 1521<br>
 sid: xe<br>
 username: convenio<br>
 password: convenio<br>
@@ -280,3 +272,51 @@ oc set env dc/${BLUEPRINT_APP} OPENSHIFT_ORACLE_DATASOURCE_PASSWORD=
 
 oc scale dc ${BLUEPRINT_APP} --replicas=1  
 ```
+
+### APPENDIX C - OPENSHIFT ORACLE PORT-FORWARDING (FOR LOCAL DEVELOPMENT ONLY)
+
+In case you need access to the Oracle-XE POD outside Openshift, you'll need to enable port-forward on the container:
+
+1- Deploy a oracle-xe image for tests.
+
+You can pull a docker image in the openshift registry ou deploy directly via the openshift web console.
+
+![oracle-docker](documentation/images/01.png "Push a oracle-xe image to openshift or blueprint namespace")
+
+You can download and build the oracle-xe docker image from here:
+
+https://github.com/wnameless/docker-oracle-xe-11g or
+https://github.com/andyrbell/oracle-xe-11g-centos
+
+2- Acquire the oracle-xe pod name
+
+Once your oracle-xe is ready, get the name of the pod:
+
+```
+oc get pods | grep oracle
+NAME                         READY     STATUS      RESTARTS   AGE
+oracle-xe-11g-1-r42tx        1/1       Running     0          7m
+```
+
+3- Port-forward the 1521
+
+Now, you'll need to port-forward to your local computer.
+
+`oc port-forward oracle-xe-11g-1-r42tx 1521:1521`
+
+PS. This operation will hang the console. All requests to `localhost:1521` will be forwarded to oracle-xe's openshift pod. 
+
+4- Test the connection
+
+Now you're able to connect in your local enviroment, like the following image:
+
+![oracle-docker](documentation/images/02.png "Database connection properties")
+
+References:
+
+https://docs.openshift.com/container-platform/3.11/dev_guide/port_forwarding.html
+https://blog.openshift.com/openshift-connecting-database-using-port-forwarding/
+https://stackoverflow.com/questions/41338964/how-to-access-database-service-remotely-in-openshift-origin
+http://www.mastertheboss.com/soa-cloud/openshift/accessing-openshift-services-remotely
+
+
