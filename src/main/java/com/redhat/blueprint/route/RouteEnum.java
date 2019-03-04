@@ -17,7 +17,7 @@
 
 package com.redhat.blueprint.route;
 
-import com.redhat.blueprint.configuration.infinispan.InfinispanAutoConfiguration;
+import com.redhat.blueprint.configuration.infinispan.InfinispanConfiguration;
 
 public enum RouteEnum {
 
@@ -27,8 +27,8 @@ public enum RouteEnum {
     DIRECT_DATABASE("direct:database", "database", "database"),
     DIRECT_CACHE_PUT("direct:cache-put", "cache-put", "cache-put"),
     DIRECT_CACHE_ENTRY_FOUND("direct:cache-entry-found", "cache-entry-found", "cache-entry-found"),
-    INFINISPAN(InfinispanAutoConfiguration.CAMEL_URI, "infinispan-cache-container", "infinispan-cache-container"),
-    INFINISPAN_LOG(InfinispanAutoConfiguration.CAMEL_LOG_URI, "infinispan-log", "infinispan-log");
+    INFINISPAN(InfinispanConfiguration.CAMEL_URI, "infinispan-cache-container", "infinispan-cache-container"),
+    INFINISPAN_LOG(InfinispanConfiguration.CAMEL_LOG_URI, "infinispan-log", "infinispan-log");
 
     private String uri;
     private String id;

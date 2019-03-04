@@ -10,6 +10,36 @@
 
     <packaging>jar</packaging>
 
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>OSS license for use within CASSI provided by Red Hat Brasil</comments>
+        </license>
+    </licenses>
+
+    <organization>
+        <name>Red Hat</name>
+        <url>https://www.redhat.com/en</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <id>rabreu</id>
+            <name>Raphael Abreu</name>
+            <organization>RED HAT</organization>
+            <roles>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+            <timezone>America/Sao_Paulo</timezone>
+            <properties>
+                <githubUrl>https://github.com/aelkz</githubUrl>
+            </properties>
+        </developer>
+    </developers>
+
     <properties>
         <license.dir>${basedir}/apache-2.0 -license</license.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -19,19 +49,11 @@
         <!-- https://access.redhat.com/documentation/en-us/red_hat_fuse/7.2/html-single/fuse_on_openshift_guide/ -->
         <!-- Checked at 28/12/2018 -->
         <jboss.fuse.bom.version>7.2.0.fuse-720020-redhat-00001</jboss.fuse.bom.version>
-        <fabric8.version>3.0.11.fuse-720027-redhat-00001</fabric8.version>
         <!-- Supported libraries -->
         <spring.boot.version>1.5.16.RELEASE</spring.boot.version>
-        <version.wildfly.camel>5.2.0.fuse-720023-redhat-00001</version.wildfly.camel>
-        <version.activemq.camel>5.11.0.redhat-630371</version.activemq.camel>
-        <version.jms.camel>2.21.0.fuse-720050-redhat-00001</version.jms.camel>
-        <version.cfx.camel>2.21.0.fuse-720050-redhat-00001</version.cfx.camel>
         <!-- Supported maven libraries -->
         <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
-        <maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
-        <maven-fabric8-plugin.version>3.5.33.fuse-720026-redhat-00001</maven-fabric8-plugin.version>
         <maven-camel-plugin.version>2.21.0.fuse-720050-redhat-00001</maven-camel-plugin.version>
-        <maven-cxf-plugin.version>3.2.5.redhat-00001</maven-cxf-plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -135,10 +157,17 @@
         <!-- or use it as required dependency through classpath -->
         <dependency>
             <!-- https://www.oracle.com/technetwork/database/features/jdbc/default-2280470.html -->
+            <!--
             <groupId>com.oracle</groupId>
             <artifactId>ojdbc7</artifactId>
             <version>12.1.0.2</version>
             <scope>compile</scope>
+            -->
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc7</artifactId>
+            <scope>system</scope>
+            <!-- Desta forma a biblioteca é empacotada no FAT Jar da aplicação final que será adicionada na imagem do container -->
+            <systemPath>${basedir}/lib/ojdbc7-12.1.0.2.jar</systemPath>
         </dependency>
         <!-- HikariCP connection pool -->
         <dependency>
@@ -150,40 +179,33 @@
 
     <build>
         <defaultGoal>spring-boot:run</defaultGoal>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>io.fabric8</groupId>
-                    <artifactId>fabric8-maven-plugin</artifactId>
-                    <version>${maven-fabric8-plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <goals>
-                                <goal>resource</goal>
-                                <goal>build</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.camel</groupId>
-                    <artifactId>camel-maven-plugin</artifactId>
-                    <version>${maven-camel-plugin.version}</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-maven-plugin</artifactId>
-                    <version>${spring.boot.version}</version>
-                    <executions>
-                        <execution>
-                            <goals>
-                                <goal>repackage</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-            </plugins>
-        </pluginManagement>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.boot.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <includeSystemScope>true</includeSystemScope>
+                </configuration>
+            </plugin>
+
+        </plugins>
     </build>
 
     <repositories>

@@ -34,6 +34,9 @@ public class InfinispanConfiguration {
 
     private Logger logger = LoggerFactory.getLogger(getClass());
 
+    public static final String CAMEL_URI = "infinispan:default?cacheContainer=#remoteCacheContainer";
+    public static final String CAMEL_LOG_URI = "log:org.apache.camel.component.infinispan?level=INFO&showAll=true&multiline=true";
+
     @Value("${infinispan.service}")
     private String service;
 
