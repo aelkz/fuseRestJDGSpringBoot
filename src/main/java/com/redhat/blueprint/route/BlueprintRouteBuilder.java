@@ -48,11 +48,14 @@ public class BlueprintRouteBuilder extends RouteBuilder {
     @Value("${api.version}")
     private String apiVersion;
 
-    @Value("infinispan.entry.lifespanTime")
+    @Value("${infinispan.entry.lifespanTime}")
     private String infinispanEntryTime;
 
-    @Value("infinispan.entry.lifespanTimeUnit")
+    @Value("${infinispan.entry.lifespanTimeUnit}")
     private String infinispanEntryTimeUnit;
+
+    @Value("${spring.datasource.url}")
+    private String oracleDatasourceUrl;
 
     @Autowired
     private BeneficiarioService beneficiarioService;
@@ -177,7 +180,7 @@ public class BlueprintRouteBuilder extends RouteBuilder {
             .setHeader(InfinispanConstants.OPERATION, constant(InfinispanOperation.PUT))
             .setHeader(InfinispanConstants.LIFESPAN_TIME_UNIT, constant(
                     // Check if environment variable has HOURS, otherwise will be set as MINUTES.
-                    (infinispanEntryTimeUnit != null && "HOURS".equals("infinispanEntryTimeUnit")) ? TimeUnit.HOURS : TimeUnit.MINUTES
+                    (infinispanEntryTimeUnit != null && "HOURS".equals(infinispanEntryTimeUnit)) ? TimeUnit.HOURS : TimeUnit.MINUTES
             ))
             .setHeader(InfinispanConstants.LIFESPAN_TIME, constant(
                     // Convert environment variable to Integer (it will represent HOURS or MINUTES accordingly to the previous environment variable)
