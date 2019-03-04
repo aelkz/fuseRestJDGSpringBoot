@@ -51,8 +51,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="329">
-                <caret line="110" column="101" selection-start-line="110" selection-start-column="101" selection-end-line="110" selection-end-column="101" />
+              <first_editor relative-caret-position="389">
+                <caret line="136" lean-forward="true" selection-start-line="136" selection-end-line="136" />
               </first_editor>
               <second_editor />
             </state>
@@ -72,8 +72,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>BeneficiarioDTO.class</find>
-      <find>+++</find>
       <find>RestEndpointDatabaseProcessor</find>
       <find>hello</find>
       <find>getBody(BeneficiarioDTO</find>
@@ -102,6 +100,8 @@
       <find>system</find>
       <find>build</find>
       <find>bc:oracle:thin</find>
+      <find>49161</find>
+      <find>1521</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src</dir>
@@ -292,7 +292,7 @@
       <workItem from="1551661499122" duration="1228000" />
       <workItem from="1551703833253" duration="4603000" />
       <workItem from="1551708531022" duration="1741000" />
-      <workItem from="1551710767266" duration="7222000" />
+      <workItem from="1551710767266" duration="7313000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Release">
       <created>1551707865745</created>
@@ -329,11 +329,18 @@
       <option name="project" value="LOCAL" />
       <updated>1551720540035</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Initial Release">
+      <created>1551720765516</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1551720765516</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32779000" />
+    <option name="totallyTimeSpent" value="32870000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1133" extended-state="0" />
@@ -725,8 +732,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="329">
-            <caret line="110" column="101" selection-start-line="110" selection-start-column="101" selection-end-line="110" selection-end-column="101" />
+          <first_editor relative-caret-position="389">
+            <caret line="136" lean-forward="true" selection-start-line="136" selection-end-line="136" />
           </first_editor>
           <second_editor />
         </state>

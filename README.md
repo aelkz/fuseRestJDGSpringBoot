@@ -135,10 +135,12 @@ docker run -d -p 49161:1521 -e ORACLE_ALLOW_REMOTE=true wnameless/oracle-xe-11g
 ```
 It will enable access through the following:
 
+```
 port: 49161<br>
 sid: xe<br>
 username: system<br>
 password: oracle
+```
 
 PS. For this blueprint, we also provide more detail for creating another user schema.
 
@@ -246,10 +248,12 @@ Execute the attached SQL script: `./documentation/oracle-xe-blueprint.sql`
 
 Now, you're able to use the following:
 
+```
 port: 1521<br>
 sid: xe<br>
 username: convenio<br>
 password: convenio<br>
+```
 
 ### APPENDIX B - ENVIRONMENT VARIABLES SETUP
 
