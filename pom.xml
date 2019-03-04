@@ -163,12 +163,19 @@
             <version>12.1.0.2</version>
             <scope>compile</scope>
             -->
+            <!-- Desta forma a biblioteca é empacotada no FAT Jar da aplicação final que será adicionada na imagem do container -->
+            <!--
             <groupId>com.oracle</groupId>
             <artifactId>ojdbc7</artifactId>
             <version>12.1.0.2</version>
             <scope>system</scope>
-            <!-- Desta forma a biblioteca é empacotada no FAT Jar da aplicação final que será adicionada na imagem do container -->
             <systemPath>${basedir}/lib/ojdbc7-12.1.0.2.jar</systemPath>
+            -->
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc6</artifactId>
+            <version>11.2.0.4</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/ojdbc6.jar</systemPath>
         </dependency>
         <!-- HikariCP connection pool -->
         <dependency>
