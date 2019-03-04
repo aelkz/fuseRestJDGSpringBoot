@@ -108,7 +108,9 @@ A specific template was build for this blueprint at `./configuration/s2i-cassi-f
 
 | Name              | Default Value       | Description          |
 |-------------------|---------------------|----------------------|
-| `OPENSHIFT_ORACLE_DATASOURCE_URL` | `` | Oracle Datasource URL. e.g: jdbc:oracle:thin:@<HOST>:<PORT>:<SID> |
+| `OPENSHIFT_ORACLE_DATASOURCE_HOST` | `` | Oracle Datasource host. e.g: jdbc:oracle:thin:@<HOST>:<PORT>:<SID> |
+| `OPENSHIFT_ORACLE_DATASOURCE_PORT` | `` | Oracle Datasource port. e.g: jdbc:oracle:thin:@<HOST>:<PORT>:<SID> |
+| `OPENSHIFT_ORACLE_DATASOURCE_SID` | `` | Oracle Datasource sid. e.g: jdbc:oracle:thin:@<HOST>:<PORT>:<SID> |
 | `OPENSHIFT_ORACLE_DATASOURCE_USERNAME` | `` | Oracle Datasource username |
 | `OPENSHIFT_ORACLE_DATASOURCE_PASSWORD` | `` | Oracle Datasource password |
 | `OPENSHIFT_ORACLE_DATASOURCE_DRIVER` | `oracle.jdbc.driver.OracleDriver` | Oracle Datasource driver |
@@ -256,3 +258,25 @@ port: 49161<br>
 sid: xe<br>
 username: convenio<br>
 password: convenio<br>
+
+### APPENDIX B - ENVIRONMENT VARIABLES SETUP
+
+In order to let the application communicate w/ infinispan and oracle _services_, you need to setup a _configmap_ or _environment variables_.
+
+```
+oc scale dc ${BLUEPRINT_APP} --replicas=0
+
+oc set env dc/${BLUEPRINT_APP} OPENSHIFT_INFINISPAN_CACHE=default
+oc set env dc/${BLUEPRINT_APP} OPENSHIFT_INFINISPAN_HOST=
+oc set env dc/${BLUEPRINT_APP} OPENSHIFT_INFINISPAN_PORT=
+oc set env dc/${BLUEPRINT_APP} OPENSHIFT_INFINISPAN_MAX_RETRIES=3
+oc set env dc/${BLUEPRINT_APP} OPENSHIFT_INFINISPAN_ENTRY_LIFESPAN_TIME=5
+oc set env dc/${BLUEPRINT_APP} OPENSHIFT_INFINISPAN_ENTRY_LIFESPAN_TIME_UNIT=MINUTES
+oc set env dc/${BLUEPRINT_APP} OPENSHIFT_ORACLE_DATASOURCE_HOST=
+oc set env dc/${BLUEPRINT_APP} OPENSHIFT_ORACLE_DATASOURCE_PORT=
+oc set env dc/${BLUEPRINT_APP} OPENSHIFT_ORACLE_DATASOURCE_SID=
+oc set env dc/${BLUEPRINT_APP} OPENSHIFT_ORACLE_DATASOURCE_USERNAME=
+oc set env dc/${BLUEPRINT_APP} OPENSHIFT_ORACLE_DATASOURCE_PASSWORD=
+
+oc scale dc ${BLUEPRINT_APP} --replicas=1  
+```
