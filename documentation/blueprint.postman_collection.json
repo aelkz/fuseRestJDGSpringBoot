@@ -1,0 +1,41 @@
+{
+	"info": {
+		"_postman_id": "c0566988-2919-4afd-ac6f-1d3ea69bc6ab",
+		"name": "poc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/api/v1/beneficiario",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"cpf\":11111111111\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/beneficiario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"beneficiario"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
