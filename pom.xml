@@ -10,8 +10,11 @@
 
     <packaging>jar</packaging>
 
-    <!-- this is needed in order to work with openshift s2i builds -->
-    <!-- and enables database connection without errors upon start -->
+    <!-- IMPORTANT:                                                       -->
+    <!-- ================================================================ -->
+    <!-- The parent is needed in order to work with openshift s2i builds. -->
+    <!-- For some reason, this must be present in POM in order to enable  -->
+    <!-- database connection without errors upon Openshift pod startup.   -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
