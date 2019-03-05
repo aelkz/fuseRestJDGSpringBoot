@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad68b455-c0e9-48ba-b67f-2daf930f1401" name="Default Changelist" comment="Initial Release">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/redhat/blueprint/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/redhat/blueprint/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/redhat/blueprint/route/BlueprintRouteBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/redhat/blueprint/route/BlueprintRouteBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/META-INF/fuseJDGRestSpringBoot.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/META-INF/spring-configuration-metadata.json" beforeDir="false" />
@@ -88,8 +83,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="59" column="49" selection-start-line="59" selection-start-column="49" selection-end-line="59" selection-end-column="49" />
+            <state relative-caret-position="154">
+              <caret line="60" column="64" selection-start-line="60" selection-start-column="64" selection-end-line="60" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -177,9 +172,9 @@
         <option value="$PROJECT_DIR$/documentation/oracle-xe-blueprint.sql" />
         <option value="$PROJECT_DIR$/src/main/java/com/redhat/blueprint/route/BlueprintRouteBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/redhat/blueprint/Application.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
       </list>
     </option>
   </component>
@@ -361,7 +356,7 @@
       <workItem from="1551703833253" duration="4603000" />
       <workItem from="1551708531022" duration="1741000" />
       <workItem from="1551710767266" duration="20918000" />
-      <workItem from="1551752162866" duration="2233000" />
+      <workItem from="1551752162866" duration="2505000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Release">
       <created>1551707865745</created>
@@ -468,11 +463,18 @@
       <option name="project" value="LOCAL" />
       <updated>1551752646978</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Initial Release">
+      <created>1551754428412</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1551754428412</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48708000" />
+    <option name="totallyTimeSpent" value="48980000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1133" extended-state="0" />
@@ -861,8 +863,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="59" column="49" selection-start-line="59" selection-start-column="49" selection-end-line="59" selection-end-column="49" />
+        <state relative-caret-position="154">
+          <caret line="60" column="64" selection-start-line="60" selection-start-column="64" selection-end-line="60" selection-end-column="64" />
         </state>
       </provider>
     </entry>
