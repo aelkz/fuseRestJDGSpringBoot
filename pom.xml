@@ -10,6 +10,8 @@
 
     <packaging>jar</packaging>
 
+    <!-- this is needed in order to work with openshift s2i builds -->
+    <!-- and enables database connection without errors upon start -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
