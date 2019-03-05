@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad68b455-c0e9-48ba-b67f-2daf930f1401" name="Default Changelist" comment="Initial Release">
-      <change afterPath="$PROJECT_DIR$/lib/ojdbc6.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/META-INF/fuseJDGRestSpringBoot.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/META-INF/spring-configuration-metadata.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
@@ -34,8 +32,6 @@
       <change beforePath="$PROJECT_DIR$/target/classes/com/aelkz/blueprint/service/dto/BeneficiarioDTO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/aelkz/blueprint/service/dto/rest/BeneficiarioResponseDTO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/aelkz/blueprint/service/dto/rest/ResponseBaseDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/log4j.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/logback.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/fuseJDGRestSpringBoot-1.0-SNAPSHOT.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
@@ -51,11 +47,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="590">
-              <caret line="177" selection-start-line="177" selection-end-line="177" />
+            <state relative-caret-position="349">
+              <caret line="118" column="48" selection-start-line="118" selection-start-column="25" selection-end-line="118" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="471">
+              <caret line="59" selection-start-line="59" selection-end-line="59" />
             </state>
           </provider>
         </entry>
@@ -64,7 +69,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>stEnum.POST_BENEFI</find>
       <find>handleFailure</find>
       <find>handleFailure(resp</find>
       <find>restEndpointDatabaseProcessor</find>
@@ -94,6 +98,7 @@
       <find>127</find>
       <find>VANILLA_RHSSO</find>
       <find>ORACLE_XE_11G_SERVICE_PORT</find>
+      <find>pring-boot-starter-data</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src</dir>
@@ -130,9 +135,9 @@
         <option value="$PROJECT_DIR$/documentation/oracle-xe-blueprint.sql" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/java/com/redhat/blueprint/route/BlueprintRouteBuilder.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/redhat/blueprint/Application.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
       </list>
     </option>
   </component>
@@ -163,6 +168,11 @@
             <path>
               <item name="FuseJDGRestSpringBoot" type="b2602c69:ProjectViewProjectNode" />
               <item name="FuseJDGRestSpringBoot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FuseJDGRestSpringBoot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FuseJDGRestSpringBoot" type="462c0819:PsiDirectoryNode" />
+              <item name="configuration" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FuseJDGRestSpringBoot" type="b2602c69:ProjectViewProjectNode" />
@@ -317,7 +327,7 @@
       <workItem from="1551661499122" duration="1228000" />
       <workItem from="1551703833253" duration="4603000" />
       <workItem from="1551708531022" duration="1741000" />
-      <workItem from="1551710767266" duration="15972000" />
+      <workItem from="1551710767266" duration="20122000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Release">
       <created>1551707865745</created>
@@ -403,11 +413,18 @@
       <option name="project" value="LOCAL" />
       <updated>1551736080940</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Initial Release">
+      <created>1551736894616</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1551736894616</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41529000" />
+    <option name="totallyTimeSpent" value="45679000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1133" extended-state="0" />
@@ -421,7 +438,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32996634" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.6176753" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.28530258" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.41210374" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -443,15 +460,15 @@
       <window_info anchor="right" id="SciView" order="7" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25885227" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2172524" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32996634" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4725028" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.6176753" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.41210374" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -461,7 +478,7 @@
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="Terminal" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.32996634" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.15754083" />
       <window_info anchor="bottom" id="Java Enterprise" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -470,6 +487,7 @@
       <window_info anchor="right" id="Maven" order="4" />
       <window_info anchor="right" id="Bean Validation" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="SciView" order="7" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -698,9 +716,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configuration/s2i-cassi-fuse72-spring-boot-camel.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/configuration/settings.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -780,13 +795,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configuration/oracle-xe-template.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="91" column="23" lean-forward="true" selection-start-line="91" selection-start-column="23" selection-end-line="91" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/redhat/blueprint/route/BlueprintRouteBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -805,13 +813,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="50" column="47" lean-forward="true" selection-start-line="50" selection-start-column="47" selection-end-line="50" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -822,10 +823,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/configuration/s2i-cassi-fuse72-spring-boot-camel.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3869" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configuration/oracle-xe-template.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="766">
+          <caret line="109" column="22" lean-forward="true" selection-start-line="106" selection-start-column="9" selection-end-line="109" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="590">
-          <caret line="177" selection-start-line="177" selection-end-line="177" />
+        <state relative-caret-position="349">
+          <caret line="118" column="48" selection-start-line="118" selection-start-column="25" selection-end-line="118" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
         </state>
       </provider>
     </entry>
