@@ -46,6 +46,7 @@
         <project.reporting.outputencoding>UTF-8</project.reporting.outputencoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <java.version>1.8</java.version>
         <!-- https://access.redhat.com/documentation/en-us/red_hat_fuse/7.2/html-single/fuse_on_openshift_guide/ -->
         <!-- Checked at 28/12/2018 -->
         <jboss.fuse.bom.version>7.2.0.fuse-720020-redhat-00001</jboss.fuse.bom.version>
@@ -76,6 +77,18 @@
     </dependencyManagement>
 
     <dependencies>
+        <!-- must use a repository manager like Nexus OSS in production environments -->
+        <!-- for local environments you can install oracle jar with the following command: -->
+        <!-- mvn install:install-file -Dfile=<Path/to/your/ojdbc7.jar> -DgroupId=com.oracle -DartifactId=ojdbc7 -Dversion=12.1.0.2 -Dpackaging=jar -->
+        <!-- or use it as required dependency through classpath -->
+        <dependency>
+            <!-- Desta forma a biblioteca é empacotada no FAT Jar da aplicação final que será adicionada na imagem do container -->
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc6</artifactId>
+            <version>11.2.0.4</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/ojdbc6.jar</systemPath>
+        </dependency>
         <dependency>
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>
@@ -87,6 +100,16 @@
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.tomcat</groupId>
+                    <artifactId>tomcat-jdbc</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -115,16 +138,6 @@
             <artifactId>camel-servlet-starter</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.apache.tomcat</groupId>
-                    <artifactId>tomcat-jdbc</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-infinispan-starter</artifactId>
         </dependency>
@@ -150,38 +163,6 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
             <version>1.5.16.RELEASE</version>
             <optional>true</optional>
-        </dependency>
-        <!-- must use a repository manager like Nexus OSS in production environments -->
-        <!-- for local environments you can install oracle jar with the following command: -->
-        <!-- mvn install:install-file -Dfile=<Path/to/your/ojdbc7.jar> -DgroupId=com.oracle -DartifactId=ojdbc7 -Dversion=12.1.0.2 -Dpackaging=jar -->
-        <!-- or use it as required dependency through classpath -->
-        <dependency>
-            <!-- https://www.oracle.com/technetwork/database/features/jdbc/default-2280470.html -->
-            <!--
-            <groupId>com.oracle</groupId>
-            <artifactId>ojdbc7</artifactId>
-            <version>12.1.0.2</version>
-            <scope>compile</scope>
-            -->
-            <!-- Desta forma a biblioteca é empacotada no FAT Jar da aplicação final que será adicionada na imagem do container -->
-            <!--
-            <groupId>com.oracle</groupId>
-            <artifactId>ojdbc7</artifactId>
-            <version>12.1.0.2</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/lib/ojdbc7-12.1.0.2.jar</systemPath>
-            -->
-            <groupId>com.oracle</groupId>
-            <artifactId>ojdbc6</artifactId>
-            <version>11.2.0.4</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/lib/ojdbc6.jar</systemPath>
-        </dependency>
-        <!-- HikariCP connection pool -->
-        <dependency>
-            <groupId>com.zaxxer</groupId>
-            <artifactId>HikariCP</artifactId>
-            <version>2.6.0</version>
         </dependency>
     </dependencies>
 

@@ -43,7 +43,7 @@ BLUEPRINT_APP_GIT=git@github.com:<USER>/fuseRestJDGSpringBoot.git
 BLUEPRINT_APP_REF=master
 
 oc delete all -lapp=${BLUEPRINT_APP}
-oc new-app --template=s2i-cassi-fuse72-spring-boot-camel --name=b${BLUEPRINT_APP} \
+oc new-app --template=s2i-cassi-fuse72-spring-boot-camel --name=${BLUEPRINT_APP} \
 --source-secret github \
 --param GIT_REPO=${BLUEPRINT_APP_GIT} \
 --param APP_NAME=${BLUEPRINT_APP} \
