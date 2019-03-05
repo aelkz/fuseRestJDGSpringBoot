@@ -52,9 +52,6 @@ public class BlueprintRouteBuilder extends RouteBuilder {
     @Value("${infinispan.entry.lifespanTimeUnit}")
     private String infinispanEntryTimeUnit;
 
-    @Value("${spring.datasource.url}")
-    private String oracleDatasourceUrl;
-
     @Autowired
     private BeneficiarioService beneficiarioService;
 

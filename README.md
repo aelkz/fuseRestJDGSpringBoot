@@ -108,9 +108,7 @@ A specific template was build for this blueprint at `./configuration/s2i-cassi-f
 
 | Name              | Default Value       | Description          |
 |-------------------|---------------------|----------------------|
-| `OPENSHIFT_ORACLE_DATASOURCE_HOST` | `` | Oracle Datasource host. e.g: jdbc:oracle:thin:@HOST:PORT:SID |
-| `OPENSHIFT_ORACLE_DATASOURCE_PORT` | `` | Oracle Datasource port. e.g: jdbc:oracle:thin:@HOST:PORT:SID |
-| `OPENSHIFT_ORACLE_DATASOURCE_SID` | `` | Oracle Datasource sid. e.g: jdbc:oracle:thin:@HOST:PORT:SID |
+| `OPENSHIFT_ORACLE_DATASOURCE_URL` | `` | Oracle Datasource URL e.g: jdbc:oracle:thin:@HOST:PORT:SID |
 | `OPENSHIFT_ORACLE_DATASOURCE_USERNAME` | `` | Oracle Datasource username |
 | `OPENSHIFT_ORACLE_DATASOURCE_PASSWORD` | `` | Oracle Datasource password |
 | `OPENSHIFT_ORACLE_DATASOURCE_DRIVER` | `oracle.jdbc.driver.OracleDriver` | Oracle Datasource driver |
@@ -119,6 +117,9 @@ A specific template was build for this blueprint at `./configuration/s2i-cassi-f
 | `OPENSHIFT_ORACLE_DATASOURCE_DDL_AUTO` | `validate` | Hibernate DDL-AUTO strategy: _validate_ , _create_ , _create-drop_ , _update_ |
 | `OPENSHIFT_ORACLE_DATASOURCE_CONNECTION_TIMEOUT` | `30000` | Oracle Datasource connection timeout |
 | `OPENSHIFT_ORACLE_DATASOURCE_CONNECTION_POOL` | `50` | Oracle Datasource connection pool |
+
+The `OPENSHIFT_ORACLE_DATASOURCE_URL` can also work with the following template:<br>
+`jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=172.30.137.245)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=xe)))`
 
 #### STANDALONE LOCAL RUN
 
