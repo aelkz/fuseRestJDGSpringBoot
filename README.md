@@ -315,9 +315,9 @@ PS. This operation will hang the console. All requests to `localhost:1521` will 
 
 Now you're able to connect in your local enviroment, like the following image:
 
-![oracle-docker](documentation/images/02.png "Database connection properties")
+<img src="/documentation/images/02.png" title="Database connection properties" width="75%" height="75%" /><br>
 
-<img src="/documentation/images/03.png" title="connection successful" width="200" height="50" /><br>
+<img src="/documentation/images/03.png" title="connection successful" width="300" height="50" /><br>
 
 References:
 
