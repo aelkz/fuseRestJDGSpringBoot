@@ -317,7 +317,7 @@ Now you're able to connect in your local enviroment, like the following image:
 
 <img src="/documentation/images/02.png" title="Database connection properties" width="75%" height="75%" /><br>
 
-<img src="/documentation/images/03.png" title="connection successful" width="300" height="50" /><br>
+<img src="/documentation/images/03.png" title="connection successful" width="350" height="45" /><br>
 
 References:
 
