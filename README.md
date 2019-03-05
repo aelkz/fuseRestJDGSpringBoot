@@ -317,27 +317,7 @@ Now you're able to connect in your local enviroment, like the following image:
 
 ![oracle-docker](documentation/images/02.png "Database connection properties")
 
-
-img[src*="#thumbnail"] {
-   width:50px;
-   height:25px;
-}
-
-aaaaa
-
-<img src="documentation/images/03.png#thumbnail" />
-
-bbbbb
-
-<img src="/documentation/images/03.png#thumbnail" />
-
-ccccc
-
-<img src="/documentation/images/03.png" alt="Kitten" title="A cute kitten" width="150" height="100" />
-
-ddddd	
-
-![oracle-docker-success](documentation/images/03.png "Database connection test")
+<img src="/documentation/images/03.png" title="connection successful" width="200" height="50" /><br>
 
 References:
 
