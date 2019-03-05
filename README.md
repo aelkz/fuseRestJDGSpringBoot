@@ -55,7 +55,7 @@ oc new-app --template=s2i-cassi-fuse72-spring-boot-camel --name=${BLUEPRINT_APP}
 
 PS. Params `source-secret` and `BUILD_SECRET` must be used only if your git repository is private.
 
-###### TEST SERVICE ENDPOINT
+###### <font color="#066cdf">TEST SERVICE ENDPOINT</font>
 
 ```
 oc get pod | grep ${BLUEPRINT_APP} | grep Running | awk '{ print $1 }'
@@ -321,9 +321,7 @@ Now you're able to connect in your local enviroment, like the following image:
 
 References:
 
-https://docs.openshift.com/container-platform/3.11/dev_guide/port_forwarding.html
-https://blog.openshift.com/openshift-connecting-database-using-port-forwarding/
-https://stackoverflow.com/questions/41338964/how-to-access-database-service-remotely-in-openshift-origin
-http://www.mastertheboss.com/soa-cloud/openshift/accessing-openshift-services-remotely
-
-
+https://docs.openshift.com/container-platform/3.11/dev_guide/port_forwarding.html<br>
+https://blog.openshift.com/openshift-connecting-database-using-port-forwarding/<br>
+https://stackoverflow.com/questions/41338964/how-to-access-database-service-remotely-in-openshift-origin<br>
+http://www.mastertheboss.com/soa-cloud/openshift/accessing-openshift-services-remotely<br>
