@@ -249,10 +249,10 @@ Execute the attached SQL script: `./documentation/oracle-xe-blueprint.sql`
 Now, you're able to use the following:
 
 ```
-port: 1521<br>
-sid: xe<br>
-username: convenio<br>
-password: convenio<br>
+port: 1521
+sid: xe
+username: convenio
+password: convenio
 ```
 
 ### APPENDIX B - ENVIRONMENT VARIABLES SETUP
