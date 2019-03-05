@@ -242,8 +242,7 @@ Apache License Version 2.0
 
 rabreu@redhat.com
 
-### APPENDIX A
-#### ORACLE USER (LOCAL ENVIRONMENT W/ DOCKER OR OPENSHIFT PORT-FORWARD)
+### APPENDIX A - ORACLE USER (LOCAL ENVIRONMENT W/ DOCKER OR OPENSHIFT PORT-FORWARD)
 
 Execute the attached SQL script: `./documentation/oracle-xe-blueprint.sql`
 
