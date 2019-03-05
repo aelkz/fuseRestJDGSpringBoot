@@ -315,9 +315,9 @@ PS. This operation will hang the console. All requests to `localhost:1521` will 
 
 Now you're able to connect in your local enviroment, like the following image:
 
-<img src="/documentation/images/02.png" title="Database connection properties" width="75%" height="75%" /><br>
+<img src="/documentation/images/02.png" title="Database connection properties" width="70%" height="70%" /><br>
 
-<img src="/documentation/images/03.png" title="connection successful" width="350" height="45" /><br>
+<img src="/documentation/images/03.png" title="connection successful" width="350" height="40" /><br>
 
 References:
 
