@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad68b455-c0e9-48ba-b67f-2daf930f1401" name="Default Changelist" comment="Initial Release">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/META-INF/fuseJDGRestSpringBoot.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/META-INF/spring-configuration-metadata.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
@@ -333,7 +331,7 @@
       <workItem from="1551755205278" duration="1387000" />
       <workItem from="1551756705850" duration="1172000" />
       <workItem from="1551807275527" duration="410000" />
-      <workItem from="1551810246135" duration="12000" />
+      <workItem from="1551810246135" duration="28000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Release">
       <created>1551707865745</created>
@@ -559,11 +557,18 @@
       <option name="project" value="LOCAL" />
       <updated>1551797253333</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Initial Release">
+      <created>1551810268759</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1551810268759</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59320000" />
+    <option name="totallyTimeSpent" value="59336000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1133" extended-state="0" />
