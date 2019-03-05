@@ -101,6 +101,12 @@
             <scope>system</scope>
             <systemPath>${basedir}/lib/ojdbc6.jar</systemPath>
         </dependency>
+        <!-- HikariCP connection pool -->
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>3.3.1</version>
+        </dependency>
         <dependency>
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>
