@@ -124,7 +124,7 @@ objects:
         prometheus.io/port: "9779"
       labels:
         expose: "true"
-        app: ${APP_NAME}-metrics
+        app: ${APP_NAME}
         provider: s2i
         version: ${APP_VERSION}
         group: ${APP_GROUP}
@@ -136,7 +136,7 @@ objects:
           protocol: TCP
           targetPort: 8081
       selector:
-        app: ${APP_NAME}-metrics
+        app: ${APP_NAME}
         provider: s2i
         group: ${APP_GROUP}
       type: ClusterIP
@@ -154,7 +154,7 @@ objects:
       name: ${APP_NAME}
     spec:
       port:
-        targetPort: 8080
+        targetPort: http
       to:
         kind: Service
         name: ${APP_NAME}

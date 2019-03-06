@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ad68b455-c0e9-48ba-b67f-2daf930f1401" name="Default Changelist" comment="Initial Release">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configuration/s2i-cassi-fuse72-spring-boot-camel.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configuration/s2i-cassi-fuse72-spring-boot-camel.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/META-INF/fuseJDGRestSpringBoot.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/META-INF/spring-configuration-metadata.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
@@ -47,15 +47,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="389">
-                <caret line="254" column="18" selection-start-line="254" selection-start-column="18" selection-end-line="254" selection-end-column="18" />
-              </first_editor>
-              <second_editor />
+        <entry file="file://$PROJECT_DIR$/configuration/s2i-cassi-fuse72-spring-boot-camel.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="946">
+              <caret line="317" column="31" selection-start-line="317" selection-start-column="31" selection-end-line="317" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -143,6 +140,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/redhat/blueprint/processor/infinispan/ExtractCPFProcessor.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/configuration/s2i-cassi-fuse72-spring-boot-camel.yaml" />
       </list>
     </option>
   </component>
@@ -165,13 +163,23 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="FuseJDGRestSpringBoot" type="b2602c69:ProjectViewProjectNode" />
               <item name="FuseJDGRestSpringBoot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FuseJDGRestSpringBoot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FuseJDGRestSpringBoot" type="462c0819:PsiDirectoryNode" />
+              <item name="configuration" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FuseJDGRestSpringBoot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FuseJDGRestSpringBoot" type="462c0819:PsiDirectoryNode" />
+              <item name="documentation" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FuseJDGRestSpringBoot" type="b2602c69:ProjectViewProjectNode" />
@@ -237,7 +245,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -338,7 +346,8 @@
       <workItem from="1551807275527" duration="410000" />
       <workItem from="1551810246135" duration="28000" />
       <workItem from="1551810426615" duration="21000" />
-      <workItem from="1551829893791" duration="12000" />
+      <workItem from="1551829893791" duration="28000" />
+      <workItem from="1551888382125" duration="9000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Release">
       <created>1551707865745</created>
@@ -578,17 +587,24 @@
       <option name="project" value="LOCAL" />
       <updated>1551810438859</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Initial Release">
+      <created>1551829916302</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1551829916302</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59369000" />
+    <option name="totallyTimeSpent" value="59394000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1133" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22790202" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23003195" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -928,11 +944,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configuration/s2i-cassi-fuse72-spring-boot-camel.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3869" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/configuration/oracle-xe-template.yaml" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/redhat/blueprint/configuration/infinispan/InfinispanConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1013,6 +1024,13 @@
             <caret line="254" column="18" selection-start-line="254" selection-start-column="18" selection-end-line="254" selection-end-column="18" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configuration/s2i-cassi-fuse72-spring-boot-camel.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="946">
+          <caret line="317" column="31" selection-start-line="317" selection-start-column="31" selection-end-line="317" selection-end-column="31" />
         </state>
       </provider>
     </entry>
